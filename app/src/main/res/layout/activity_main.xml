@@ -44,21 +44,24 @@
         <Button
             android:layout_weight="20"
             android:textSize="10sp"
-            android:background="@drawable/borders"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="About"/>
         <Button
             android:layout_weight="20"
             android:textSize="10sp"
-            android:background="@drawable/borders"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Friends"/>
         <Button
             android:layout_weight="20"
             android:textSize="10sp"
-            android:background="@drawable/borders"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Photos"/>
