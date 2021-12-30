@@ -1,89 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.facebook.MainActivity">
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <ImageView
-        android:layout_width="500dp"
-        android:layout_height="400dp"
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/banner"
-        android:src="@drawable/coverphoto"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:scaleType="centerCrop"
-        />
-    <ImageView
-        android:layout_marginStart="15dp"
+        android:src="@drawable/coverphoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/profilepic"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:id="@+id/profilepic"
         android:src="@drawable/profilephoto"
-        android:layout_alignBottom="@+id/linearLayout"/>
-    <LinearLayout
-        android:layout_toEndOf="@+id/profilepic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/banner"
-        android:orientation="horizontal"
-        android:background="@drawable/borders"
-        android:weightSum="100"
-        android:id="@+id/linearLayout">
-        <Button
-            android:layout_width="wrap_content"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
-            android:layout_height="wrap_content"
-            android:text="Timeline"
-            android:textSize="10sp"
-            android:layout_weight="20"/>
-        <Button
-            android:layout_weight="20"
-            android:textSize="10sp"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="About"/>
-        <Button
-            android:layout_weight="20"
-            android:textSize="10sp"
-            android:background="@drawable/borders"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Friends"/>
-        <Button
-            android:layout_weight="20"
-            android:textSize="10sp"
-            android:background="@drawable/borders"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Photos"/>
-        <Button
-            android:layout_weight="20"
-            android:textSize="10sp"
-            android:background="@drawable/borders"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="More"/>
-    </LinearLayout>
-    <TextView
+        app:layout_constraintBottom_toBottomOf="@id/banner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+    <Button
+        android:id="@+id/timelineBtn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="13dp"
-        android:text="Nowshad CV"
-        android:ems="15"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="100dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/timeline"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilepic" />
+
+    <Button
+        android:id="@+id/aboutBtn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:backgroundTint="@color/white"
+        android:paddingStart="4dp"
+        android:text="@string/about_text"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@id/timelineBtn"
+        app:layout_constraintTop_toBottomOf="@+id/profilepic" />
+
+    <Button
+        android:id="@+id/friendsBtn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:paddingStart="8dp"
+        android:text="@string/friends_text"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@+id/aboutBtn"
+        app:layout_constraintTop_toBottomOf="@id/profilepic" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="@string/photos"
+        android:paddingStart="4dp"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:layout_constraintStart_toEndOf="@id/friendsBtn"
+        app:layout_constraintTop_toBottomOf="@id/profilepic" />
+
+    <Button
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:paddingStart="4dp"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:icon="@drawable/ic_baseline_more_vert_24"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/profilepic" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textName"
-        android:layout_alignBottom="@+id/banner"/>
-</RelativeLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/banner"
+        android:text="Nowshad CV"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/banner"
+
+        app:layout_constraintStart_toEndOf="@+id/profilepic" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Facebook</string>
+    <string name="timeline">Timeline</string>
+    <string name="about_text">About</string>
+    <string name="friends_text">Friends</string>
+    <string name="photos">Photos</string>
 </resources>
