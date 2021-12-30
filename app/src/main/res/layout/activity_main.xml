@@ -34,8 +34,9 @@
         android:weightSum="100"
         android:id="@+id/linearLayout">
         <Button
-            android:background="@drawable/borders"
             android:layout_width="wrap_content"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:text="Timeline"
             android:textSize="10sp"
